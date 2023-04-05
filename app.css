@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+.keyboard {
+  padding: 10px 0;
+  background-color: rgba(6, 6, 6, 0.3);
+}
+
+.key-list {
+  height: 250px;
+  background-color: #666666;
+  /* 改行させないため */
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.key-list > .key {
+  cursor: pointer;
+  display: inline-block;
+  width: 45px;
+  height: calc(100% - 6px);
+  /* scrollbar分 */
+  background-color: #ffffff;
+  margin: 0 3px;
+  border-radius: 0 0 5px 5px;
+}
+
+.key-list > .key.-sharp {
+  position: relative;
+  width: 0;
+  margin: 0;
+}
+
+.key-list > .key.-sharp::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(-40px / 2);
+  width: 40px;
+  height: 50%;
+  border-radius: 0 0 5px 5px;
+  background-color: #000000;
+}
